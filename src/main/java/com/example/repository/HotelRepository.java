@@ -47,6 +47,10 @@ public class HotelRepository {
 		return hotelList;
 	}
 	
+	/**
+	 * ホテル情報の全件検索
+	 * @return 全ホテル情報
+	 */
 	public List<Hotel> findAll(){
 		String findAllSql = "SELECT id,area_name,hotel_name,address,nearest_station,price,parking FROM hotels";
 		List<Hotel> hotelList = template.query(findAllSql,HOTEL_ROW_MAPPER);

@@ -30,4 +30,11 @@ public class HotelService {
 	public List<Hotel> findByPrice(int price) {
 		return repository.findByPrice(price);
 	}
-}
+	/**
+	 * ホテル情報の全件検索
+	 * @return 全ホテル情報
+	 */
+	public List<Hotel> findAll(){
+		return repository.findAll();
+	}
+} 
