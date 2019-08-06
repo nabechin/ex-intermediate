@@ -36,6 +36,10 @@ public class TeamController {
 		model.addAttribute("teamList",teamList);
 		return "showTeamlist";
 	}
+	@RequestMapping("/teamDetail")
+	public String showDatail(int id) {
+		
+	}
 	
 
 }
