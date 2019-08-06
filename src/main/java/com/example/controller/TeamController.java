@@ -36,10 +36,20 @@ public class TeamController {
 		model.addAttribute("teamList",teamList);
 		return "showTeamlist";
 	}
-	@RequestMapping("/teamDetail")
-	public String showDatail(int id) {
-		
+	/**
+	 * チームの詳細画面を表示
+	 * 
+	 * @param id チームId
+	 * @param model リクエストスコープ
+	 * @return　チームの詳細情報画面
+	 */
+	@RequestMapping("/showTeamDetail")
+    public String showTeamDetail(int id,Model model) {
+		Team team = service.findBy(id);
+		model.addAttribute("team",team);
+		return "showTeamDetail";
 	}
+	
 	
 
 }
