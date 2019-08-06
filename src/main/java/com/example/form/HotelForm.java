@@ -34,6 +34,14 @@ public class HotelForm {
 	 * ホテルの駐車場の有無
 	 */
 	private String parking;
+	
+	/**
+	 *　ホテル価格をString型からInteger型に変換
+	 * @return Integer型のホテル価格
+	 */
+	public Integer getIntegerPrice() {
+		return Integer.parseInt(price);
+	}
 
 	public String getId() {
 		return id;
