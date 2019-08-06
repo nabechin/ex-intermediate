@@ -30,4 +30,13 @@ public class TeamService {
 	public List<Team> findAll() {
 		return repository.findAll();
 	}
+	/**
+	 * 一件のチーム情報の検索.
+	 * 
+	 * @param id チームId
+	 * @return 1件のチーム情報
+	 */
+	public Team findBy(int id) {
+		return repository.findby(id);
+	}
 }
