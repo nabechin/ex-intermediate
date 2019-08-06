@@ -10,7 +10,7 @@ import com.example.domain.Team;
 import com.example.repository.TeamRepository;
 
 /**
- * Team情報を操作するクラス.
+ * Team情報を操作するサービスクラス.
  * 
  * @author yuma.watanabe
  *
@@ -36,7 +36,7 @@ public class TeamService {
 	 * @param id チームId
 	 * @return 1件のチーム情報
 	 */
-	public Team findBy(int id) {
-		return repository.findby(id);
+	public Team load(int id) {
+		return repository.load(id);
 	}
 }

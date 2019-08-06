@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.example.domain.Team;
 
 /**
- * Teamのデータベース操作を表すクラス.
+ * teamsテーブルを操作するクラス.
  * 
  * @author yuma.watanabe
  *
@@ -48,10 +48,10 @@ public class TeamRepository {
 	 * @param id チームId
 	 * @return 一件のチーム情報
 	 */
-	public Team findby(int id){
-		String findBySql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams WHERE id=:id";
+	public Team load(int id){
+		String loadSql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams WHERE id=:id";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id",id);
-		Team team = template.queryForObject(findBySql, param, TEAM_ROW_MAPPER);
+		Team team = template.queryForObject(loadSql, param, TEAM_ROW_MAPPER);
 		return team;
 				
 	}

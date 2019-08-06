@@ -3,7 +3,7 @@ package com.example.domain;
 
 
 /**
- * チーム情報一覧を表すクラス.
+ * チーム情報を表すクラス.
  * 
  * @author yuma.watanabe
  *
