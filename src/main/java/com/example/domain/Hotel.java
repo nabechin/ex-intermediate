@@ -1,13 +1,40 @@
 package com.example.domain;
 
+/**
+ * ホテル情報を表すクラス.
+ * 
+ * @author yuma.watanabe
+ *
+ */
 public class Hotel {
 
+	/**
+	 * ホテルのid
+	 */
 	private Integer id;
+	/**
+	 * ホテルの地域圏
+	 */
 	private String areaName;
+	/**
+	 * ホテルの名前
+	 */
 	private String hotelName;
+	/**
+	 * ホテルの住所
+	 */
 	private String address;
+	/**
+	 * ホテルの最寄駅
+	 */
 	private String nearestStation;
+	/**
+	 * ホテル一泊の値段
+	 */
 	private Integer price;
+	/**
+	 * ホテルの駐車場の有無
+	 */
 	private String parking;
 
 	public Integer getId() {
