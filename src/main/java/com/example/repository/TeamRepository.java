@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.example.domain.Team;
@@ -33,13 +35,25 @@ public class TeamRepository {
 	};
 	
 	/**
-	 * 全チーム情報の取得
+	 * 全チーム情報の取得.
 	 * @return 全チーム情報一覧
 	 */
 	public List<Team> findAll() {
 		String findAllSql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams ORDER BY inauguration";
 		List <Team> teamList = template.query(findAllSql,TEAM_ROW_MAPPER);
 		return teamList;
+	}
+	/**
+	 * 一件のチーム情報を取得.
+	 * @param id チームId
+	 * @return 一件のチーム情報
+	 */
+	public Team findby(int id){
+		String findBySql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams WHERE id=:id";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("id",id);
+		Team team = template.queryForObject(findBySql, param, TEAM_ROW_MAPPER);
+		return team;
+				
 	}
 
 }
