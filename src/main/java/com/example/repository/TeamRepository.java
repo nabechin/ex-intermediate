@@ -37,7 +37,7 @@ public class TeamRepository {
 	 * @return 全チーム情報一覧
 	 */
 	public List<Team> findAll() {
-		String findAllSql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams";
+		String findAllSql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams ORDER BY inauguration";
 		List <Team> teamList = template.query(findAllSql,TEAM_ROW_MAPPER);
 		return teamList;
 	}
